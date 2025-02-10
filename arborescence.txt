@@ -1,0 +1,35 @@
+/kingz-congo
+ ├── /public
+ │    ├── index.html         # Fichier HTML principal
+ │    ├── favicon.ico        # Icône du site
+ │
+ ├── /src
+ │    ├── /components        # Composants réutilisables
+ │    │    ├── Navbar.js
+ │    │    ├── Navbar.css
+ │    │    ├── Footer.js
+ │    │    ├── Footer.css
+ │    │    ├── Card.js
+ │    │    ├── Card.css
+ │    │    
+ │    ├── /pages             # Pages principales du site
+ │    │    ├── Home.js
+ │    │    ├── Home.css
+ │    │    ├── About.js
+ │    │    ├── About.css
+ │    │    ├── Contact.js
+ │    │    ├── Contact.css
+ │    │    ├── Eshop.js
+ │    │    ├── Eshop.css
+ │    │    ├── Membership.js
+ │    │    ├── Membership.css
+ │    │    ├── Donate.js
+ │    │    ├── Donate.css
+ │    │    
+ │    ├── index.js           # Point d'entrée de l'application React
+ │    ├── App.js             # Composant principal de l'application
+ │    ├── App.css            # Style global de l'application
+ │    ├── styles.css         # Fichier CSS global complémentaire
+ │
+ ├── package.json            # Dépendances et configuration du projet
+ ├── README.md               # Documentation du projet

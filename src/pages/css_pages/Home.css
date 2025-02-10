@@ -1,0 +1,92 @@
+/* Assure que l'image de fond couvre toute la page */
+
+
+
+.home {
+        position: relative;
+        
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        padding: 20px;
+        overflow: hidden;
+}
+
+
+.background-image {
+    /*position: absolute;*/
+   
+    background-color: black;
+    box-shadow: 2px 5px 5px blanchedalmond;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Assure que l’image est totalement visible */
+    z-index: -1; /* Place l’image en arrière-plan */
+}
+
+
+/* Style pour les titres et paragraphes */
+h1, p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombre pour améliorer la lisibilité */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Ajuste l'affichage des cartes */
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne si besoin */
+    justify-content: center; /* Centre les cartes */
+    gap: 20px; /* Espacement entre les cartes */
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Style de base des cartes */
+
+/*
+.card {
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 280px; /* Largeur légèrement plus grande pour l’équilibre */
+    /*box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+}*/
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Ajustement général de la page */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%; /* Prend presque toute la largeur en mobile */
+        
+    }
+}

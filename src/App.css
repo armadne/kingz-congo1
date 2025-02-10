@@ -1,0 +1,57 @@
+/* Importation API de google pour la police de caractère */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    /*margin: 0;*/
+    /*padding: 0;*/
+    background-color: black;
+    font-family: "Oswald", serif;
+   /* background-image: url("background_home4.jpg");*/
+}
+
+.background-image {
+    position: absolute;
+    /*background-size: cover;*/
+    background-color: black;
+    box-shadow: 2px 5px 5px black;
+    
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Assure que l’image est totalement visible */
+    /*z-index: -1; *//* Place l’image en arrière-plan */
+}
+
+.header {
+    background-color: #007bff;
+    color: transparent;
+    padding: 20px;
+}
+
+.hero {
+    padding: 20px;
+    background: transparent;
+}
+
+/*
+.hero button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: transparent;
+    border: none;
+    cursor: pointer;
+}
+*/
+
+.footer {
+    background: #333;
+    color: black;
+    padding: 50px;
+    /*position: absolute;*/
+    width: 100%;
+    bottom: 0;
+}
