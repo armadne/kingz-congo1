@@ -41,7 +41,7 @@ function Navbar1() {
 
 
 
-      <div className={`ham-menu ${menuOpen ? "active" : ""}`} 
+      <div className={`ham-menu ${menuOpen ? "active" : ""}`}   // "menuOpen ? " : Est ce que le menu est ouvert
       onClick={toggleMenu}>
           <span></span> {/* Premiere barre */}
           <span></span> {/* Deuxieme barre */}
