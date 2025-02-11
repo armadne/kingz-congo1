@@ -35,6 +35,10 @@ function Navbar1() {
       {/* Icone menu hamburger */}
   
       <nav>
+      <img src="/kingz-congo-img.jpg" alt="logo" />
+
+
+
       <div className={`ham-menu ${menuOpen ? "active" : ""}`} 
       onClick={toggleMenu}>
           <span></span> {/* Premiere barre */}

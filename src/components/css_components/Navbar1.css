@@ -25,6 +25,12 @@ body {
     font-family: sans-serif; /* Utilise une police sans-serif */
 }
 
+img
+{
+    width: 120px;
+    height: 120px;
+}
+
 /* off-screen-menu */
 /* Menu latéral qui apparaît et disparaît */
 .off-screen-menu {
