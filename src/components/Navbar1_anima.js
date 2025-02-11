@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import "./css_components/Navbar1.css";
 
@@ -7,7 +7,7 @@ function Navbar1() {
 
       // Etat pour gérer l'affichage du menu
       
-      const [menuOpen, setMenuOpen] = useState(false);
+      const [menuOpen, setMenuOpen] = useState(true);
 
       // Fonction pour basculer le menu
 
@@ -35,10 +35,11 @@ function Navbar1() {
       {/* Icone menu hamburger */}
   
       <nav>
-      <div className={`ham-menu ${menuOpen ? "active" : ""}`} onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
+      <div className={`ham-menu ${menuOpen ? "active" : ""}`} 
+      onClick={toggleMenu}>
+          <span></span> {/* Premiere barre */}
+          <span></span> {/* Deuxieme barre */}
+          <span></span> {/* Troisieme barre */}
         </div>
       </nav>
 
@@ -47,4 +48,4 @@ function Navbar1() {
     );
 }
 
-export default Navbar1;
+export default Navbar1; // Export du composant pour pouvoir l'utiliser ailleurs

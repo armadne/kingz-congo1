@@ -1,7 +1,9 @@
 import React from "react";
 import "./css_pages/Home.css"; // Fichier CSS spécifique à Home
+//import "../components/css_components/Navbar1.css"
 import Card from "../components/Card";
 //import background from "./background_home4.jpg";
+
 
 function Home() {
     return (
