@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './css_pages/Membership.css'
+//import background from "./membership_background.jpg";
 
 const MembershipForm = () => {
   const [formData, setFormData] = useState({
@@ -31,6 +32,7 @@ const MembershipForm = () => {
     <div className="form-container">
       <h2>Devenir Membre</h2>
       <form onSubmit={handleSubmit}>
+      {/*<img src={background} alt="Devenir Membre" className="background-image" />*/}
         <div className="form-group">
           <label>Nom :</label>
           <input type="text" name="nom" value={formData.nom} onChange={handleChange} required />

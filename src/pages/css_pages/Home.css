@@ -15,11 +15,14 @@
         color: white;
         padding: 20px;
         overflow: hidden;
+        background-color: #002E2C;
+
 }
 
 
+/*
 .background-image {
-    /*position: absolute;*/
+    position: absolute;
    
     background-color: black;
     box-shadow: 2px 5px 5px blanchedalmond;
@@ -27,9 +30,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Assure que l’image est totalement visible */
-    z-index: -1; /* Place l’image en arrière-plan */
-}
+    /*object-fit: contain; /* Assure que l’image est totalement visible */
+   /*z-index: -1; /* Place l’image en arrière-plan */
+/*}
+
 
 
 /* Style pour les titres et paragraphes */
@@ -38,6 +42,7 @@ h1, p {
     max-width: 800px;
     margin: 0 auto;
 }
+
 
 /* Ajuste l'affichage des cartes */
 .card-container {
@@ -76,6 +81,7 @@ html, body {
     padding: 0;
     display: flex;
     flex-direction: column;
+    /*background-color: #002E2C;*/
 }
 
 /* Responsive Design */
