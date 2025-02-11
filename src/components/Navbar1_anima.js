@@ -3,9 +3,25 @@ import { Link } from 'react-router-dom';
 import "./css_components/Navbar1.css";
 
 function Navbar1() {
-    return(
-        <div class="navbar">
-                    <div class="off-screen-menu">
+    
+
+      // Etat pour gérer l'affichage du menu
+      
+      const [menuOpen, setMenuOpen] = useState(false);
+
+      // Fonction pour basculer le menu
+
+      const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+      };
+
+      return(
+
+
+        <div className="navbar">
+          {/* Menu latéral */}
+
+          <div className={`off-screen-menu ${menuOpen ? "active" : ""}`}>
         <ul>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/About">About</Link></li>
@@ -15,20 +31,20 @@ function Navbar1() {
                 <li><Link to="/contact">Contact</Link></li>
         </ul>
       </div>
+
+      {/* Icone menu hamburger */}
   
       <nav>
-        <div class="ham-menu">
+      <div className={`ham-menu ${menuOpen ? "active" : ""}`} onClick={toggleMenu}>
           <span></span>
           <span></span>
           <span></span>
         </div>
       </nav>
-  
 
-        </div>
-
-
-    )
+</div>
+        
+    );
 }
 
 export default Navbar1;
