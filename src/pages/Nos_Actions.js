@@ -1,5 +1,6 @@
 import React from "react";
 import "./css_pages/Nos_actions.css";
+//import background from "./Image1.jpg";
 
 const actions = [
   {
