@@ -23,8 +23,7 @@ function App() {
         <Router>
 
         <div className="app-container"> 
-
-        
+            <title>Kingz Of Kongo</title>
 
             
 
