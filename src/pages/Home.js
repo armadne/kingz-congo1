@@ -13,7 +13,6 @@ function Home() {
         
        <div className="home">
 
-    
 
 
         {/*{<img src={background} alt="Kingz of Kongo" className="background-image" />*/}
