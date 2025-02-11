@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './css_pages/Membership.css'
-//import background from "./Image1.jpg";
+
 
 const MembershipForm = () => {
   const [formData, setFormData] = useState({
@@ -31,9 +31,12 @@ const MembershipForm = () => {
   return (
 
     <div className="Backgrnd">
-        <div className="form-container">
+     
+      
+      <div className="form-container">
+        
+        <h2>Devenir Membre</h2>
 
-<h2>Devenir Membre</h2>
 <form onSubmit={handleSubmit}>
 {/*{<img src={background} alt="Devenir Membre" className="background-image" />}*/}
   <div className="form-group">
@@ -119,7 +122,10 @@ const MembershipForm = () => {
   <button onClick={() => alert("Paiement de 10€ effectué !")}>Payer 10€</button>
 </div>
 </div>
+    
     </div>
+ 
+
   
   );
 };

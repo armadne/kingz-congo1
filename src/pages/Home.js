@@ -23,9 +23,10 @@ function Home() {
                 <Card title="Nos actions" description=" Découvrez nos projets humanitaires"/>
                 {/*<Card title="Notre boutique" description="Achetez et soutenez nos actions"/>*/}
                 <Card title="Nous contacter" description="Rejoignez notre communauté" />
-                <img src="IMG_9706R.jpg" alt="test" />
 
             </div>
+
+           
         </div>
 
 

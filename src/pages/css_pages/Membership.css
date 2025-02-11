@@ -1,16 +1,29 @@
+
 .form-container {
     width: 90%;
     max-width: 500px;
     margin: auto;
     padding: 20px;
-    /*background: white;*/
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0); /* Ajoute une transparence */
+    box-shadow: none;
     border-radius: 10px;
     text-align: center;
-    backdrop-filter: blur(10px);
-    background: white;
+
     
   }
+
+  .Backgrnd {
+    background-image: url('../img-about.jpg'); /* Chemin vers ton image */
+    background-size: cover; /* Affiche l'image entière sans la couper */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    width: -1500px; /* Centre l'image */
+    background-attachment: fixed; /* Garde l'image fixe lors du scroll */
+    /* Largeur égale à la fenêtre */
+    height: 100vh; /* Hauteur égale à la fenêtre */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
   
   h2, h3 {
     color: #333;
@@ -19,37 +32,46 @@
   .form-group {
     margin-bottom: 15px;
     text-align: left;
+    
   }
   
-  label {
-    font-weight: bold;
-    display: block;
-  }
-  
+
   input, select {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
     border-radius: 5px;
-    border: 1px solid #ccc;
-    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Bordure semi-transparente */
+    background: rgba(255, 255, 255, 0.1); /* Fond légèrement transparent */
+    color: black; /* Texte blanc */
    
   }
+
+  /* Pour rendre les textes visibles */
+input::placeholder, select option {
+  color: black;
+}
   
   button {
     width: 100%;
     padding: 10px;
-    background: #007BFF;
-    color: white;
-    border: none;
+    background: rgba(0, 123, 255, 0.5); /* Bouton semi-transparent */
+    color: black;
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
   }
   
   button:hover {
-    background: #0056b3;
-  }
+    background: rgba(0, 123, 255, 0.8); /* Rend le bouton plus visible au survol */
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  color: black; /* Texte en blanc */
+}
   
   .payment-section {
     margin-top: 20px;
