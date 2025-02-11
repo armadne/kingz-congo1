@@ -37,6 +37,8 @@ function Navbar1() {
       <nav>
       <img src="/kingz-congo-img.jpg" alt="logo" />
 
+      <h1>Kingz Of Kongo</h1>
+
 
 
       <div className={`ham-menu ${menuOpen ? "active" : ""}`} 
