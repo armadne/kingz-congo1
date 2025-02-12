@@ -4,7 +4,7 @@ import './css_pages/About.css';
 const About = () => {
   return (
 
-    <div className='img-background'>
+    <div className='img_background'>
 
 <div className="about-container">
        
@@ -30,10 +30,13 @@ const About = () => {
            Notre équipe est composée de professionnels passionnés et expérimentés, dédiés à la promotion du basketball et au soutien des jeunes talents. Ensemble, nous travaillons pour créer un impact positif dans nos communautés.
          </p>
        </section>
+
      </div>
+   
 
     </div>
-   
+
+
    
   );
 };

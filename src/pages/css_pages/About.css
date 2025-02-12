@@ -1,16 +1,18 @@
 .about-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-
+    padding: 90px;
+    /*text-align: center;*/
+   
   }
 
-  div.img-background 
+  
+  div.img_background 
   {
     background-image: url('../img-about.jpg');
     background-size: cover;
   }
+    
 
   
   .about-container h1 {
