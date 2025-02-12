@@ -11,7 +11,7 @@
   {
     background-image: url('../img-about.jpg');
     background-size: cover;
-  }
+    height: 100vh;  }
     
 
   

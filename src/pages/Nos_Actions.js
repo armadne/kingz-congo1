@@ -2,6 +2,8 @@ import React from "react";
 import "./css_pages/Nos_actions.css";
 //import background from "./Image1.jpg";
 
+
+
 const actions = [
   {
     title: "Actions Caritatives",
@@ -25,7 +27,10 @@ const actions = [
 
 const NosActions = () => {
   return (
-    <div className="actions-container">
+
+    <div className="img-actions">
+      
+                <div className="actions-container">
       <h1 className="title">Nos Actions</h1>
       <div className="cards-container">
         {actions.map((action, index) => (
@@ -39,6 +44,13 @@ const NosActions = () => {
         ))}
       </div>
     </div>
+    </div>
+
+
+
+
+
+
   );
 };
 
