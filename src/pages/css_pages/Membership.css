@@ -13,7 +13,7 @@
   }
 
   .Backgrnd {
-    background-image: url('../img-about.jpg'); /* Chemin vers ton image */
+    background-image: url('../members-img.jpg'); /* Chemin vers ton image */
     background-size: cover; /* Affiche l'image entière sans la couper */
     background-repeat: no-repeat; /* Empêche la répétition de l'image */
     width: -1500px; /* Centre l'image */
