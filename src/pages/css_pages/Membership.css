@@ -1,24 +1,26 @@
 
 .form-container {
-    width: 90%;
-    max-width: 500px;
+    width: 60%;
+    /*max-width: 500px;*/
     margin: auto;
     padding: 20px;
-    background: rgba(255, 255, 255, 0); /* Ajoute une transparence */
-    box-shadow: none;
+    background: rgba(255, 255, 255, 0.2); /* Augmentation de la transparence */
+    backdrop-filter: blur(10px); /* Effet de flou pour améliorer la lisibilité */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     text-align: center;
-
-    
   }
+
 
   .Backgrnd {
     background-image: url('../members-img.jpg'); /* Chemin vers ton image */
     background-size: cover; /* Affiche l'image entière sans la couper */
     background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-position: center;
     width: -1500px; /* Centre l'image */
     background-attachment: fixed; /* Garde l'image fixe lors du scroll */
     /* Largeur égale à la fenêtre */
+    /*width: 100vh;*/
     height: 100vh; /* Hauteur égale à la fenêtre */
     display: flex;
     justify-content: center;
@@ -41,8 +43,8 @@
     padding: 8px;
     margin-top: 5px;
     border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.5); /* Bordure semi-transparente */
-    background: rgba(255, 255, 255, 0.1); /* Fond légèrement transparent */
+    border: 1px solid #ccc; /* Bordure semi-transparente */
+    background: rgba(255, 255, 255, 0.2); /* Fond légèrement transparent */
     color: black; /* Texte blanc */
    
   }
@@ -55,16 +57,17 @@ input::placeholder, select option {
   button {
     width: 100%;
     padding: 10px;
-    background: rgba(0, 123, 255, 0.5); /* Bouton semi-transparent */
-    color: black;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: #007bff; /* Bouton semi-transparent */
+    color: white;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+    transition: background-position 0.3s ease-in-out;
   }
   
   button:hover {
-    background: rgba(0, 123, 255, 0.8); /* Rend le bouton plus visible au survol */
+    background: #0056b3; /* Rend le bouton plus visible au survol */
 }
 
 label {

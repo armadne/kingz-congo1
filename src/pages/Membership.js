@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './css_pages/Membership.css'
-
+import { motion } from "framer-motion";
 
 const MembershipForm = () => {
   const [formData, setFormData] = useState({
@@ -30,10 +30,20 @@ const MembershipForm = () => {
 
   return (
 
-    <div className="Backgrnd">
+    <motion.div
+    className="Backgrnd"
+      initial={{ opacity: 0}} 
+      animate={{ opacity: 1}} 
+      transition={{ duration: 1.5  }}
+      >
+
+      <motion.div
+      className="form-container"
+      initial={{ y: -50, opacity: 1}}
+      transition={{ duration: 1, ease: "easeOut"}}
+      >
      
       
-      <div className="form-container">
         
         <h2>Devenir Membre</h2>
 
@@ -121,9 +131,9 @@ const MembershipForm = () => {
   <h3>Payer la cotisation</h3>
   <button onClick={() => alert("Paiement de 10€ effectué !")}>Payer 10€</button>
 </div>
-</div>
+</motion.div>
     
-    </div>
+    </motion.div>
  
 
   
