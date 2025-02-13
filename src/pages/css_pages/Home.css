@@ -1,7 +1,5 @@
 /* Assure que l'image de fond couvre toute la page */
 
-
-
 .home {
 
         width: 100%;
@@ -14,12 +12,42 @@
         color: white;
         padding: 20px;
         overflow: hidden;
-        /*background-color: #002E2C;*/
-        background-image: url("../IMG_9706R.jpg") ;
         background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("../IMG_9706R.jpg") ;
 
+        /* Animation fadeIn */
+
+        opacity: 0;
+        animation: fadeIn 2s ease-in forwards;
+       
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.background-card-container
+{
+        opacity: 0;
+        animation: fadeIn 2s ease-in forwards;
+      }
+      
+      @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+      }
 
 
 
@@ -31,6 +59,7 @@ h1, p {
     text-shadow: white; /* Ombre pour améliorer la lisibilité */
     max-width: 800px;
     margin: 0 auto;
+    font-family: "Oswald", sans-serif;
 }
 
 
@@ -92,5 +121,4 @@ html, body {
 
 
 
-/*------------------------------------------------------------*/
 

@@ -16,37 +16,42 @@ import NosActions from "./pages/Nos_Actions";
 import Donations from "./pages/Donations";
 import Contact from "./pages/Contact";
 
+import { Helmet } from "react-helmet";
+
 
 
 function App() {
     return (
+
         <Router>
 
+<Helmet>
+      <title>Kingz Of Kongo</title>
+  </Helmet>
+
+  
+<Navbar1/>
+
+
         <div className="app-container"> 
-            <title>Kingz Of Kongo</title>
 
+          <div className="content">
+          <Routes>
             
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/devenir_membre" element={<Membership />} />
+            <Route path="/nos_actions" element={<NosActions />} />
+            <Route path="/donations" element={<Donations />} />
+            <Route path="/contact" element={<Contact />} />
 
-            <Navbar1/>
+          </Routes>
+          </div>
 
-
-
-            <Routes>
-              
-
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/devenir_membre" element={<Membership />} />
-              <Route path="/nos_actions" element={<NosActions />} />
-              <Route path="/donations" element={<Donations />} />
-              <Route path="/contact" element={<Contact />} />
-
-            </Routes>
-
-            <Footer />
 
             </div>
 
+            <Footer/>
             </Router>
 
     );
