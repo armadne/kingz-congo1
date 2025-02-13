@@ -1,6 +1,7 @@
 import React from "react";
 import "./css_pages/Nos_actions.css";
 //import background from "./Image1.jpg";
+import videoBg from "./video-actions.mp4"; // Assurez-vous
 
 
 
@@ -29,6 +30,12 @@ const NosActions = () => {
   return (
 
     <div className="img-actions">
+
+      {/* Vidéo en arrière plan */}
+      <video autoPlay loop muted className="background-video">
+        <source src={videoBg} type="video/mp4" />
+        Votre navigateur ne supporte pas les videos.
+      </video>
       
                 <div className="actions-container">
       <h1 className="title">Nos Actions</h1>
@@ -45,12 +52,6 @@ const NosActions = () => {
       </div>
     </div>
     </div>
-
-
-
-
-
-
   );
 };
 
