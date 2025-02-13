@@ -14,13 +14,96 @@
 }
 
 
+/*Animation pour l'image en backgrnd*/
+/* Animation de Zoom Progressif */
+
+@keyframes backgroundZoom {
+  from {
+    transform: scale(1); /* L'image commence à sa taille normale */
+    opacity: 0; /* L'image est complètement invisible au départ */
+  }
+
+  to {
+    transform: scale(1.1); /* L'image s'agrandit légèrement (effet de zoom) */
+    opacity: 1; /* L'image devient complètement visible */
+  }
+}
+
+/* Appliquer l'animation à l'image de fond */
+.img_background {
+  background-image: url('../img-about.jpg'); /* Définit l'image de fond */
+  background-size: cover; /* L'image couvre toute la zone disponible */
+  height: 100vh; /* Hauteur de l'élément égale à 100% de la hauteur de la fenêtre */
+  display: flex; /* Permet de centrer les éléments contenus si nécessaire */
+  align-items: center; /* Centre verticalement le contenu */
+  justify-content: center; /* Centre horizontalement le contenu */
+
+  animation: backgroundZoom 3s ease-out forwards;
+  /* backgroundZoom -> Animation utilisée */
+  /* 3s -> Durée de l'animation */
+  /* ease-out -> Démarre rapidement et ralentit vers la fin pour un effet fluide */
+  /* forwards → Garde l’état final de l’animation (évite de revenir à opacity: 0) */
+}
+
+
+
+
+
+/* Animation Texte */
+@keyframes fadeSlipUp {
+  from {
+    opacity: 0;
+    transform: translate(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+
 .about-container {
+  /* Animation Texte */
+  opacity: 0;
+  animation: fadeSlipUp 1s ease-out forwards; 
+  /*  fadeSlideUp → Fait apparaître en fondu tout en remontant légèrement.*/
+  /*forwards → Permet de garder l’état final de l’animation (sinon ça revient à opacity: 0)*/
+  /* Animation Texte */
+
     max-width: 800px;
+    font-size: 40px;
     margin: 0 auto;
     padding: 90px;
     /*text-align: center;*/
    
   }
+
+  .about-section {
+
+    /* Animation Texte */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlipUp 1s ease-out forwards;
+    /* Animation Texte */
+
+    margin-bottom: 40px;
+  }
+
+ /* Animation Texte */
+  .about-section:nth-child(1) {
+    animation-delay: 0.3s; /* animation-delay → Chaque section s’affiche avec un léger décalage pour un effet progressif. */
+  }
+
+  .about-section:nth-child(2) {
+    animation-delay: 0.6s;
+  }
+
+  .about-section:nth-child(3) {
+    animation-delay: 0.9s;
+  }
+
+  /* Animation Texte */
+
 
   .logo_about {
 
@@ -43,24 +126,21 @@
 
   
   .about-container h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 20px;
     color: lightslategray;
   }
   
-  .about-section {
-    margin-bottom: 40px;
-  }
   
   .about-section h2 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 10px;
     color: blanchedalmond;
   }
   
   .about-section p {
-    font-size: 1.2rem;
+    font-size: 22px;
     line-height: 1.6;
-    color: whitesmoke;
+    color: white;
   }
   
