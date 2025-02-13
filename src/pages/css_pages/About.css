@@ -1,3 +1,19 @@
+.about-header {
+  display: flex;
+  align-items: center; /* Aligne le logo et le titre verticalement */
+  padding: 20px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacement entre le logo et le titre */
+}
+
+
 .about-container {
     max-width: 800px;
     margin: 0 auto;
@@ -5,6 +21,17 @@
     /*text-align: center;*/
    
   }
+
+  .logo_about {
+
+    position : absolute;
+    top: 20px;
+    left: 20px;
+    width: 120px;
+    height: auto;
+  }
+
+
 
   
   div.img_background 

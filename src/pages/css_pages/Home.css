@@ -1,5 +1,8 @@
 /* Assure que l'image de fond couvre toute la page */
 
+
+
+
 .home {
 
         width: 100%;
@@ -59,7 +62,7 @@ h1, p {
     text-shadow: white; /* Ombre pour améliorer la lisibilité */
     max-width: 800px;
     margin: 0 auto;
-    font-family: "Oswald", sans-serif;
+    font-family: "Economica", sans-serif;
 }
 
 

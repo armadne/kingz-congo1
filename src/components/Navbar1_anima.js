@@ -35,9 +35,16 @@ function Navbar1() {
       {/* Icone menu hamburger */}
   
       <nav>
-      <img src="/kingz-congo-img.jpg" alt="logo" />
 
+        <div className="logo-container">
+
+      <img src="/kingz-congo-img.jpg" alt="logo" />
       <h1 className="website_title">Kingz Of Kongo</h1>
+
+        </div>
+        </nav>
+
+
 
 
 
@@ -47,9 +54,9 @@ function Navbar1() {
           <span></span> {/* Deuxieme barre */}
           <span></span> {/* Troisieme barre */}
         </div>
-      </nav>
-
 </div>
+
+
         
     );
 }

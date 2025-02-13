@@ -27,6 +27,10 @@ function App() {
 
 <Helmet>
       <title>Kingz Of Kongo</title>
+      <link 
+                    href="https://fonts.googleapis.com/css2?family=Economica:wght@400;700&display=swap" 
+                    rel="stylesheet"
+                />
   </Helmet>
 
   

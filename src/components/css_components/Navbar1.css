@@ -22,14 +22,28 @@ a:hover {
 /* Styles pour le body */
 body {
     background-color: rgb(65, 71, 97); /* Définit la couleur de fond */
-    font-family: sans-serif; /* Utilise une police sans-serif */
+    font-family: "Economica", sans-serif; /* Utilise une police sans-serif */
 }
 
+nav img
+{
+    width: 120px;
+    height: 120px;
+    margin-right: 10px;
+}
+
+h1.website_title {
+    color : blanchedalmond;
+    font-size: 2rem;
+}
+
+/*
 img
 {
     width: 120px;
     height: 120px;
 }
+*/
 
 h1.website_title {
 
@@ -40,13 +54,16 @@ h1.website_title {
 /* Menu latéral qui apparaît et disparaît */
 .off-screen-menu {
     background-color: rgb(34, 37, 49); /* Définit la couleur de fond du menu */
+
     height: 100vh; /* Prend toute la hauteur de l'écran */
     width: 100%; /* Prend toute la largeur possible */
     max-width: 450px; /* Mais ne dépasse pas 450px de large */
     position: fixed; /* Fixe la position du menu */
     top: 0; /* L'aligne en haut */
     right: -450px; /* Cache le menu en le décalant à droite hors de l'écran */
+
     display: flex; /* Active le modèle flexbox */
+
     flex-direction: column; /* Aligne les éléments en colonne */
     align-items: center; /* Centre horizontalement les éléments */
     justify-content: center; /* Centre verticalement les éléments */
@@ -64,8 +81,11 @@ h1.website_title {
 /* Barre de navigation */
 nav {
     padding: 1rem; /* Ajoute un rembourrage autour du contenu */
-    display: flex; /* Utilise flexbox */
-    background-color: rgb(34, 37, 49); /* Définit la couleur de fond */
+    align-items: center;
+    display: flex;
+    /*display: flex; /* Utilise flexbox */  /* RE place le logo au centre */
+    /*background-color: rgb(34, 37, 49); /* Définit la couleur de fond */  /* Delete la couleur de fond */
+    
 }
 
 /* ham menu */

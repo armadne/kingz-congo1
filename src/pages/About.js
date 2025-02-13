@@ -4,11 +4,12 @@ import './css_pages/About.css';
 const About = () => {
   return (
 
-    <div className='img_background'>
+    <div className="img_background">
+
 
 <div className="about-container">
        
-       <h1>Qui sommes-nous ?</h1>
+       
  
        <section className="about-section">
          <h2>Nos valeurs</h2>
