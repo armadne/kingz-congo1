@@ -27,11 +27,11 @@ const DonationForm = () => {
 
     <div className="img_background">
 
-<div className="form-container">
+<div className="form-container-Donations">
           
           
           <h2>Faire un Don</h2>
-          <form onSubmit={handleSubmit}>
+          <form className="form_donation" onSubmit={handleSubmit}>
             <div className="form-group">
               <label>Nom :</label>
               <input type="text" name="nom" value={formData.nom} onChange={handleChange} required />

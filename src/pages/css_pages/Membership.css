@@ -1,14 +1,52 @@
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomBackground {
+  from {
+    transform: scale(1);
+    filter: blur(5px);
+  }
+  to {
+    transform: scale(1.05);
+    filter: blur(0);
+  }
+}
+
+
+.about-section:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.about-section:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.about-section:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
 
 .form-container {
     width: 60%;
-    /*max-width: 500px;*/
-    margin: auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.2); /* Augmentation de la transparence */
+    max-width: 500px;
+    /*margin: auto;*/
+    /*padding: 20px;*/
+    background: rgba(255, 255, 255, 0); /* Augmentation de la transparence */
     backdrop-filter: blur(10px); /* Effet de flou pour améliorer la lisibilité */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeSlipUp 1s ease-in-out forwards;
   }
 
 
@@ -17,23 +55,27 @@
     background-size: cover; /* Affiche l'image entière sans la couper */
     background-repeat: no-repeat; /* Empêche la répétition de l'image */
     background-position: center;
-    width: -1500px; /* Centre l'image */
+    width: 100%; /* Centre l'image */
+    height: 135vh;
+    display: flex;
+    justify-content: center;
+   align-items: center;
     background-attachment: fixed; /* Garde l'image fixe lors du scroll */
     /* Largeur égale à la fenêtre */
     /*width: 100vh;*/
-    height: 100vh; /* Hauteur égale à la fenêtre */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-  
-  h2, h3 {
-    color: #333;
+    animation: zoomBackground 1.5s ease-in-out;
   }
   
-  .form-group {
-    margin-bottom: 15px;
-    text-align: left;
+  h2, h3 {
+    color: white;
+  }
+  
+  .form-group label {
+
+    color: #fff;
+
+    /*margin-bottom: 15px;
+    text-align: left;*/
     
   }
   
@@ -44,7 +86,7 @@
     margin-top: 5px;
     border-radius: 5px;
     border: 1px solid #ccc; /* Bordure semi-transparente */
-    background: rgba(255, 255, 255, 0.2); /* Fond légèrement transparent */
+    background: rgba(255, 255, 255, 0.3); /* Fond légèrement transparent */
     color: black; /* Texte blanc */
    
   }
@@ -70,11 +112,12 @@ input::placeholder, select option {
     background: #0056b3; /* Rend le bouton plus visible au survol */
 }
 
-label {
+/*label {
   font-weight: bold;
   display: block;
-  color: black; /* Texte en blanc */
+  color: black; /* Texte en blanc 
 }
+  */
   
   .payment-section {
     margin-top: 20px;
