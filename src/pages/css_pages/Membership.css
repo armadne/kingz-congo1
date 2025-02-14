@@ -40,7 +40,7 @@
     /*margin: auto;*/
     /*padding: 20px;*/
     background: rgba(255, 255, 255, 0); /* Augmentation de la transparence */
-    backdrop-filter: blur(10px); /* Effet de flou pour améliorer la lisibilité */
+    /*backdrop-filter: blur(10px); /* Effet de flou pour améliorer la lisibilité */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     text-align: center;
