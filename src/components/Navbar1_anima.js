@@ -38,7 +38,7 @@ function Navbar1() {
 
         <div className="logo-container">
 
-      <img src="/kingz-congo-img.jpg" alt="logo" />
+      <img className="logo-website" src="/kingz-congo-logo-removebg-preview.png" alt="logo" />
       <h1 className="website_title">Kingz Of Kongo</h1>
 
         </div>
