@@ -1,5 +1,5 @@
 /* Importation API de google pour la police de caractère */
-@import url('https://fonts.googleapis.com/css2?family=Economica:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Big+Shoulders+Display:wght@100..900&display=swap');
 
 
 
@@ -11,10 +11,8 @@
 }
 
 
-
-
 body {
-    font-family: "Economica", sans-serif;
+    font-family: "Antonio", sans-serif;;
     font-size: 30px;
     text-align: center;
     /*margin: 0;*/

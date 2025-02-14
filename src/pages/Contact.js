@@ -24,7 +24,7 @@ const Contact = () => {
 
       <h1>Nous Contacter</h1>
       <form onSubmit={handleSubmit} className="contact-form">
-        <label htmlFor="message">Votre message :</label>
+        <label htmlFor="message">Votre message : </label>
         <textarea
         
           id="message"

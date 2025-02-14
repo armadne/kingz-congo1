@@ -62,7 +62,7 @@ h1, p {
     text-shadow: white; /* Ombre pour améliorer la lisibilité */
     max-width: 800px;
     margin: 0 auto;
-    font-family: "Economica", sans-serif;
+    /*font-family: "Economica", sans-serif;*/
 }
 
 

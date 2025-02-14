@@ -73,7 +73,7 @@
   .contact-form textarea {
     position: relative;
     z-index: 1; /* Assure que l'on peut cliquer */
-    background: rgba(255, 255, 255, 0.7);
+    background: transparent;
     color: black;
 
     width: 100%;
@@ -103,6 +103,12 @@
   /* Placeholder blanc */
 
 .contact-form textarea {
-  background: rgba(255, 255, 255, 0.5); /* Plus visible */
+  background: rgba(255, 255, 255, 0.2); /* Plus visible */
   font-size: 20px;
+  border: 1px solid black;
+}
+
+.contact-form textarea::placeholder {
+  color: white; /* Change la couleur du texte du placeholder */
+  opacity: 0.4; /* Ajuste l'opacité pour qu'il soit bien visible */
 }
