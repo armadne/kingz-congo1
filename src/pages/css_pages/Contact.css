@@ -10,6 +10,8 @@
 }
 
 
+
+
 .contact-page video{
   position: absolute;
   top: 0;
@@ -22,6 +24,7 @@
 
 .contact-container {
     max-width: 600px;
+    font-size: 30px;
     margin: 150px auto;
     padding: 20px;
     background: rgba(255, 255, 255, 0.2); /* Transparent */
@@ -48,19 +51,21 @@
 
   
   .contact-container h1 {
-    font-size: 24px;
+    font-size: 40px;
     margin-bottom: 20px;
     color: white;
   }
-  
+
+
+
   .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 60px;
   }
   
   .contact-form label {
-    font-size: 18px;
+    font-size: 28px;
     font-weight: bold;
     color: white;
   }
@@ -99,4 +104,5 @@
 
 .contact-form textarea {
   background: rgba(255, 255, 255, 0.5); /* Plus visible */
+  font-size: 20px;
 }
