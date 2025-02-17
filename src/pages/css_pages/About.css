@@ -24,7 +24,7 @@
   }
 
   to {
-    transform: scale(1.1); /* L'image s'agrandit légèrement (effet de zoom) */
+    transform: scale(1.0); /* L'image s'agrandit légèrement (effet de zoom) */
     opacity: 1; /* L'image devient complètement visible */
   }
 }
@@ -122,7 +122,8 @@
   {
     background-image: url('../img-about.jpg');
     background-size: cover;
-    height: 100vh;  }
+    height: 100vh;  
+  }
     
 
   

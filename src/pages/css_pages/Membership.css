@@ -95,11 +95,14 @@
 input::placeholder, select option {
   color: black;
 }
+
+
+
   
   button {
     width: 100%;
     padding: 10px;
-    background: #007bff; /* Bouton semi-transparent */
+    background: #28a745; /* Bouton semi-transparent */
     color: white;
     border: none;
     border-radius: 5px;
@@ -108,16 +111,12 @@ input::placeholder, select option {
     transition: background-position 0.3s ease-in-out;
   }
   
-  button:hover {
-    background: #0056b3; /* Rend le bouton plus visible au survol */
+ button:hover {
+      background: #218838; /* Rend le bouton plus visible au survol */
+
 }
 
-/*label {
-  font-weight: bold;
-  display: block;
-  color: black; /* Texte en blanc 
-}
-  */
+
   
   .payment-section {
     margin-top: 20px;

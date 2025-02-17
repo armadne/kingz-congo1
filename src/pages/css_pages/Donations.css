@@ -41,10 +41,25 @@
     border-radius: 5px;
     border: 1px solid #ccc;
   }
+
+  .paypal-button-container {
+    text-align: center;
+    margin-top: 15px;
+  }
   
+  .paypal-button {
+    width: 150px; /* Réduit la taille du bouton */
+    height: auto;
+  }
+
+  .paypal-button:hover {
+    background: #218838;
+  }
+
+
+
   button {
     width: 100%;
-    padding: 10px;
     background: #28a745;
     color: white;
     border: none;
@@ -56,4 +71,6 @@
   button:hover {
     background: #218838;
   }
+
+  
   
