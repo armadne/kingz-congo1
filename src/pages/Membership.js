@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './css_pages/Membership.css'
 import { motion } from "framer-motion";
+
+
+
 
 const MembershipForm = () => {
   const [formData, setFormData] = useState({
@@ -27,6 +30,15 @@ const MembershipForm = () => {
     e.preventDefault();
     alert("Formulaire soumis avec succès !");
   };
+
+  useEffect(() => {
+    // Charger le bouton PayPal après le rendu du composant
+    if (window.paypal) {
+      window.paypal.HostedButtons({
+        hostedButtonId: "FDSFSCUEL996C",
+      }).render("#paypal-container-FDSFSCUEL996C");
+    }
+  }, []);
 
   return (
 
@@ -127,14 +139,22 @@ const MembershipForm = () => {
   <button type="submit">S'inscrire</button>
 </form>
 
-<div className="payment-section">
-  <h3>Payer la cotisation</h3>
-  <button onClick={() => alert("Paiement de 10€ effectué !")}>Payer 10€</button>
-</div>
+
+
+
+        {/* Conteneur du bouton PayPal  */}
+        <div id="paypal-container-FDSFSCUEL996C"></div>
+    
+        {/* Initialisation du bouton PayPal */}
+
+        <div id="paypal-container-FDSFSCUEL996C"></div>
+
+
+
+
 </motion.div>
     
     </motion.div>
- 
 
   
   );
