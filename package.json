@@ -2,7 +2,6 @@
   "name": "kingz-congo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://KingzOfKongo.github.io/KingzOfKongo_test_hebg",
   "dependencies": {
     "@paypal/react-paypal-js": "^8.8.2",
     "background": "^0.3.3",
@@ -22,9 +21,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
+
   },
   "eslintConfig": {
     "extends": [
