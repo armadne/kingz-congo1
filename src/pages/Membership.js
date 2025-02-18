@@ -137,17 +137,16 @@ const MembershipForm = () => {
   </div>
 
   <button type="submit">S'inscrire</button>
-</form>
 
-
-
-
-        {/* Conteneur du bouton PayPal  */}
-        <div id="paypal-container-FDSFSCUEL996C"></div>
-    
+  
         {/* Initialisation du bouton PayPal */}
 
+
+        
         <div id="paypal-container-FDSFSCUEL996C"></div>
+
+       
+</form>
 
 
 

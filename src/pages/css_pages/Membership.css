@@ -56,7 +56,7 @@
     background-repeat: no-repeat; /* Empêche la répétition de l'image */
     background-position: center;
     width: 100%; /* Centre l'image */
-    height: 155vh;
+    height: 170vh;
     display: flex;
     justify-content: center;
    align-items: center;
@@ -122,3 +122,12 @@ input::placeholder, select option {
     margin-top: 20px;
   }
   
+
+
+  /* terme "Paiement par Paypal" au dessus du button Paypal */
+  p
+  {
+    margin-top: 20px;
+    font-size: 26px;
+    color: white;
+  }
