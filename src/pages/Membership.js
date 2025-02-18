@@ -32,7 +32,7 @@ const MembershipForm = () => {
   };
 
   useEffect(() => {
-    // Charger le bouton PayPal après le rendu du composant
+    // Charger le bouton PayPal après le rendu du composan
     if (window.paypal) {
       window.paypal.HostedButtons({
         hostedButtonId: "FDSFSCUEL996C",
