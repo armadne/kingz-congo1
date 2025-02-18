@@ -14,6 +14,7 @@
     "react-scripts": "5.0.1",
     "tailwind": "^4.0.0",
     "tailwinds": "^0.0.0",
+    "vercel": "^41.1.4",
     "web-vitals": "^4.2.4"
   },
   "scripts": {
