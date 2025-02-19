@@ -1,9 +1,13 @@
 /* Assure que l'image de fond couvre toute la page */
 
 
-
+form
+{
+   zoom: 65%;
+}
 
 .home {
+
 
         width: 100%;
         min-height: 100vh;

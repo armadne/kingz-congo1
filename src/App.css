@@ -1,7 +1,9 @@
 /* Importation API de google pour la police de caractère */
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Big+Shoulders+Display:wght@100..900&display=swap');
 
-
+/*html {
+    font-size: -11px; /* Réduit tout proportionnellement */
+  
 
 .navbar {
     position: fixed;
@@ -20,6 +22,8 @@ body {
     background-color: #000000;
     
    /* background-image: url("background_home4.jpg");*/
+
+
 }
 
 .background-image {

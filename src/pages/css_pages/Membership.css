@@ -56,7 +56,7 @@
     background-repeat: no-repeat; /* Empêche la répétition de l'image */
     background-position: center;
     width: 100%; /* Centre l'image */
-    height: 170vh;
+    height: 190vh;
     display: flex;
     justify-content: center;
    align-items: center;
@@ -69,6 +69,8 @@
   h2, h3 {
     color: white;
   }
+
+
   
   .form-group label {
 
