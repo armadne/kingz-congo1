@@ -103,6 +103,7 @@ input::placeholder, select option {
   
   button {
     width: 100%;
+    font-size: 20px;
     padding: 10px;
     background: #28a745; /* Bouton semi-transparent */
     color: white;
@@ -114,7 +115,7 @@ input::placeholder, select option {
   }
   
  button:hover {
-      background: #218838; /* Rend le bouton plus visible au survol */
+      background: black; /* Rend le bouton plus visible au survol */
 
 }
 
@@ -130,6 +131,14 @@ input::placeholder, select option {
   p
   {
     margin-top: 20px;
-    font-size: 26px;
+    font-size: 30px;
     color: white;
   }
+
+
+button.devenez-membre-btn:hover
+
+{
+  color: black;
+}
+ 

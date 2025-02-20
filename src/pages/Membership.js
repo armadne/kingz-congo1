@@ -136,17 +136,22 @@ const MembershipForm = () => {
     </select>
   </div>
 
-  <button type="submit">S'inscrire</button>
+  
+  <button className="btn-inscription" type="submit">S'inscrire</button>
 
   
         {/* Initialisation du bouton PayPal */}
 
 
         
-        <div id="paypal-container-FDSFSCUEL996C"></div>
-
        
 </form>
+
+
+
+<button className="devenez-membre-btn">
+  <a href="https://www.paypal.com/ncp/payment/NYAVX8GM83B3J">Payer 10€ de cotisation</a>
+</button>
 
 
 
