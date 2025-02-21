@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from "react";
-import './css_pages/Membership.css'
+import React, { useState, useEffect, useRef } from "react";
+import "./css_pages/Membership.css";
 import { motion } from "framer-motion";
-
-
-
 
 const MembershipForm = () => {
   const [formData, setFormData] = useState({
@@ -21,6 +18,8 @@ const MembershipForm = () => {
     tailleVetement: "",
   });
 
+  const paypalRef = useRef(null);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -31,136 +30,121 @@ const MembershipForm = () => {
     alert("Formulaire soumis avec succès !");
   };
 
+  // Fonction pour charger le script PayPal dynamiquement
+  const loadPayPalScript = (callback) => {
+    const script = document.createElement("script");
+    script.src = "https://www.paypal.com/sdk/js?client-id=TON_CLIENT_ID&currency=EUR";
+    script.async = true;
+    script.onload = callback;
+    document.body.appendChild(script);
+  };
+
   useEffect(() => {
-    // Charger le bouton PayPal après le rendu du composan
-    if (window.paypal) {
-      window.paypal.HostedButtons({
-        hostedButtonId: "FDSFSCUEL996C",
-      }).render("#paypal-container-FDSFSCUEL996C");
-    }
+    loadPayPalScript(() => {
+      if (window.paypal) {
+        // Bouton PayPal classique
+        window.paypal.Buttons({
+          createOrder: (data, actions) => {
+            return actions.order.create({
+              purchase_units: [{ amount: { currency_code: "EUR", value: "10.00" } }],
+            });
+          },
+          onApprove: (data, actions) => {
+            return actions.order.capture().then((details) => {
+              alert("Paiement réussi par " + details.payer.name.given_name);
+            });
+          },
+          onError: (err) => {
+            console.error("Erreur PayPal :", err);
+          },
+        }).render(paypalRef.current);
+
+        // Bouton Google Pay via PayPal
+        window.paypal.Buttons({
+          fundingSource: window.paypal.FUNDING.GOOGLEPAY,
+          style: { shape: "rect", color: "black", label: "pay" },
+          createOrder: (data, actions) => {
+            return actions.order.create({
+              purchase_units: [{ amount: { currency_code: "EUR", value: "10.00" } }],
+            });
+          },
+          onApprove: (data, actions) => {
+            return actions.order.capture().then((details) => {
+              alert("Paiement réussi par " + details.payer.name.given_name);
+            });
+          },
+          onError: (err) => {
+            console.error("Erreur Google Pay :", err);
+          },
+        }).render("#google-pay-button-container");
+      }
+    });
   }, []);
 
   return (
-
-    <motion.div
-    className="Backgrnd"
-      initial={{ opacity: 0}} 
-      animate={{ opacity: 1}} 
-      transition={{ duration: 1.5  }}
-      >
-
-      <motion.div
-      className="form-container"
-      initial={{ y: -50, opacity: 1}}
-      transition={{ duration: 1, ease: "easeOut"}}
-      >
-     
-      
-        
+    <motion.div className="Backgrnd" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5 }}>
+      <motion.div className="form-container" initial={{ y: -50, opacity: 1 }} transition={{ duration: 1, ease: "easeOut" }}>
         <h2>Devenir Membre</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>Nom :</label>
+            <input type="text" name="nom" value={formData.nom} onChange={handleChange} required />
+          </div>
+          <div className="form-group">
+            <label>Prénom :</label>
+            <input type="text" name="prenom" value={formData.prenom} onChange={handleChange} required />
+          </div>
+          <div className="form-group">
+            <label>Date de naissance :</label>
+            <input type="date" name="dateNaissance" value={formData.dateNaissance} onChange={handleChange} required />
+          </div>
+          <div className="form-group">
+            <label>Adresse :</label>
+            <input type="text" name="adresse" value={formData.adresse} onChange={handleChange} required />
+          </div>
+          <div className="form-group">
+            <label>Téléphone :</label>
+            <input type="tel" name="telephone" value={formData.telephone} onChange={handleChange} required />
+          </div>
+          <div className="form-group">
+            <label>Adresse mail :</label>
+            <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+          </div>
+          <div className="form-group">
+            <label>Compte Instagram :</label>
+            <input type="text" name="instagram" value={formData.instagram} onChange={handleChange} />
+          </div>
+          <div className="form-group">
+            <label>Compte Facebook :</label>
+            <input type="text" name="facebook" value={formData.facebook} onChange={handleChange} />
+          </div>
+          <div className="form-group">
+            <label>Poste de jeu :</label>
+            <select name="posteJeu" value={formData.posteJeu} onChange={handleChange}>
+              <option value="">Sélectionnez un poste</option>
+              <option value="Meneur">Meneur</option>
+              <option value="Arrière">Arrière</option>
+              <option value="Ailier">Ailier</option>
+              <option value="Ailier fort">Ailier fort</option>
+              <option value="Pivot">Pivot</option>
+            </select>
+          </div>
+          <button className="btn-inscription" type="submit">
+            S'inscrire
+          </button>
+        </form>
 
-<form onSubmit={handleSubmit}>
-{/*{<img src={background} alt="Devenir Membre" className="background-image" />}*/}
-  <div className="form-group">
-    <label>Nom :</label>
-    <input type="text" name="nom" value={formData.nom} onChange={handleChange} required />
-  </div>
+        {/* Bouton PayPal */}
+        <div ref={paypalRef}></div>
 
-  <div className="form-group">
-    <label>Prénom :</label>
-    <input type="text" name="prenom" value={formData.prenom} onChange={handleChange} required />
-  </div>
+        {/* Bouton Google Pay */}
+        <div id="google-pay-button-container"></div>
 
-  <div className="form-group">
-    <label>Date de naissance :</label>
-    <input type="date" name="dateNaissance" value={formData.dateNaissance} onChange={handleChange} required />
-  </div>
-
-  <div className="form-group">
-    <label>Adresse :</label>
-    <input type="text" name="adresse" value={formData.adresse} onChange={handleChange} required />
-  </div>
-
-  <div className="form-group">
-    <label>Téléphone :</label>
-    <input type="tel" name="telephone" value={formData.telephone} onChange={handleChange} required />
-  </div>
-
-  <div className="form-group">
-    <label>Adresse mail :</label>
-    <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-  </div>
-
-  <div className="form-group">
-    <label>Compte Instagram :</label>
-    <input type="text" name="instagram" value={formData.instagram} onChange={handleChange} />
-  </div>
-
-  <div className="form-group">
-    <label>Compte Facebook :</label>
-    <input type="text" name="facebook" value={formData.facebook} onChange={handleChange} />
-  </div>
-
-  <div className="form-group">
-    <label>Poste de jeu :</label>
-    <select name="posteJeu" value={formData.posteJeu} onChange={handleChange}>
-      <option value="">Sélectionnez un poste</option>
-      <option value="Meneur">Meneur</option>
-      <option value="Arrière">Arrière</option>
-      <option value="Ailier">Ailier</option>
-      <option value="Ailier fort">Ailier fort</option>
-      <option value="Pivot">Pivot</option>
-    </select>
-  </div>
-
-  <div className="form-group">
-    <label>Taille :</label>
-    <input type="number" name="taille" value={formData.taille} onChange={handleChange} placeholder="En cm" />
-  </div>
-
-  <div className="form-group">
-    <label>Pointure :</label>
-    <input type="number" name="pointure" value={formData.pointure} onChange={handleChange} />
-  </div>
-
-  <div className="form-group">
-    <label>Taille de vêtement :</label>
-    <select name="tailleVetement" value={formData.tailleVetement} onChange={handleChange}>
-      <option value="">Sélectionnez une taille</option>
-      <option value="S">S</option>
-      <option value="M">M</option>
-      <option value="L">L</option>
-      <option value="XL">XL</option>
-      <option value="XXL">XXL</option>
-      <option value="XXXL">XXXL</option>
-    </select>
-  </div>
-
-  
-  <button className="btn-inscription" type="submit">S'inscrire</button>
-
-  
-        {/* Initialisation du bouton PayPal */}
-
-
-        
-       
-</form>
-
-
-
-<button className="devenez-membre-btn">
-  <a href="https://www.paypal.com/ncp/payment/NYAVX8GM83B3J">Payer 10€ de cotisation</a>
-</button>
-
-
-
-
-</motion.div>
-    
+        <button className="devenez-membre-btn">
+          <a href="https://www.paypal.com/ncp/payment/LHFDGH2CX8S2S">Payer 10€ de cotisation</a>
+        </button>
+      </motion.div>
     </motion.div>
-
-  
   );
 };
 
