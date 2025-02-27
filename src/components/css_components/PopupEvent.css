@@ -1,0 +1,73 @@
+/* Le fond sombre qui couvre tout l'écran quand le popup est visibel*/
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Occupe toute la largeur de l'écran */
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Moins foncé */
+    display: flex; /* Active Flexbox */
+    justify-content: center; /* Centre horizontaement */
+    align-items: center; /* Centre verticalement */
+    z-index: 1000; /* Pour s'assurer que le popup passe  au dessus du reste */
+
+}
+
+/* La boite principale du popup */
+
+.popup {
+    background: black; /* Fond blanc */
+    padding: 20px;
+    border-radius: 8px; /* Coins arrondis */
+    text-align: center;
+    width: 250px; /* Largeur fixe */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de profondeur */
+    animation: fadeIn 0.5s ease-in-out;
+    position: relative;
+}
+
+/* Animation apparition */
+
+@keyframes fadeIn {
+    from {
+        opacity : 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-btn {
+
+    background: red;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+}
+
+.cta-btn {
+    background: #ff4500;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.cta-btn:hover
+
+{
+    background: #e63e00;
+}
+

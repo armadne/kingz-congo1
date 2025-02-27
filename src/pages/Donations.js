@@ -13,15 +13,58 @@ const DonationForm = () => {
     montant: "",
   });
 
+  const [loading, setLoading] = useState(false); // Pour gérer l'état du bouton
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Merci pour votre don de ${formData.montant}€ !`);
-  };
+
+    try{
+      const response = await fetch("http://localhost:5000/send-donation-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+
+      });
+
+      const data = await response.json();
+      
+      if (data.success) {
+        alert(`Merci pour votre don de ${formData.montant}€ !`);
+
+      // Redirection vers PayPal avec les détails du don
+      const paypalUrl = `https://www.paypal.com/donate?business=${encodeURIComponent(
+      "contact@kingzofkongo.com"
+      )}&amount=${encodeURIComponent(
+      formData.montant
+      )}&currency_code=EUR`;
+
+      window.location.href = paypalUrl;
+
+    
+    } else {
+        alert("Erreur lors de l'envoi de l'email. Veuillez réessayer.");
+
+      }
+
+
+    }
+    catch(error) {
+      console.error("Erreur lors de l'envoi de l'email :", error);
+      alert("Une erreur est survenue. Veuillez réessayer.");
+    }
+    finally{
+      setLoading(false);
+    }
+
+  
+  }
 
   return (
 
@@ -57,49 +100,25 @@ const DonationForm = () => {
               <input type="text" name="pays" value={formData.pays} onChange={handleChange} required />
             </div>
     
+    
             <div className="form-group">
-              <label>Montant du don (€) :</label>
-              <input type="number" name="montant" value={formData.montant} onChange={handleChange} required />
+              <label>Indiquer le Montant du don (€) :</label>
+              <input type="number" name="montant" value={formData.montant} onChange={handleChange} required min="1" />
             </div>
     
-            {/*<button type="submit">Faire un don</button>*/}
 
+            <button type="submit" disabled={loading}>
+              {loading ? "Traitement en cours..." : "Faire un don avec PayPal"}
+              </button>
+        
+
+
+            
 
 
           </form>
 
-
-
-
-          
-
-                  {/* Bouton PayPal */}
-
-
-                  <div className="paypal-button-container">
-  <form action="https://www.paypal.com/donate" method="post" target="_top">
-    <input type="hidden" name="hosted_button_id" value="NQ2QZ8FAJ6DRY" />
-    <input 
-      type="image" 
-      src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" 
-      border="0" 
-      name="submit" 
-      title="PayPal - The safer, easier way to pay online!" 
-      alt="Donate with PayPal button" 
-      className="paypal-button"
-    />
-    <img 
-      alt="" 
-      border="0" 
-      src="https://www.paypal.com/en_FR/i/scr/pixel.gif" 
-      width="1" 
-      height="1" 
-    />
-  </form>
 </div>
-
-</div>
-
 
 </div>
 

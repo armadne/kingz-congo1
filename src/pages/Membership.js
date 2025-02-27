@@ -20,14 +20,42 @@ const MembershipForm = () => {
 
   const paypalRef = useRef(null);
 
+
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Formulaire soumis avec succès !");
+
+    try {
+      const response = await fetch("http://localhost:5000/send-email", {
+        method : "POST", // Envoie d'une requete POST
+        headers : {
+          "Content-Type" : "application/json" // Indique qu'on envoie du JSON 
+        },
+
+        body: JSON.stringify(formData), // Convertit les données du formulaire en JSON
+
+      });
+
+      const data = await response.json(); // Attend la reponse du serveur et la convertit en JSON
+      if (data.success) {
+        alert("Formulaire soumis et email envoyé"); // Message de succés
+      } else {
+        alert("Erreur lors de l'envoi du formualaire"); // Message d'erreur
+      }
+    } catch(error) {
+      console.error("Erreur:", error);
+      alert("Une erreur est survenue"); // Gestion des erreurs 
+    }
+
+
+   
   };
 
   // Fonction pour charger le script PayPal dynamiquement
@@ -141,7 +169,7 @@ const MembershipForm = () => {
         <div id="google-pay-button-container"></div>
 
         <button className="devenez-membre-btn">
-          <a href="https://www.paypal.com/ncp/payment/LHFDGH2CX8S2S">Payer 10€ de cotisation</a>
+          <a href="https://www.paypal.com/ncp/payment/LHFDGH2CX8S2S">Payer la cotisation</a>
         </button>
       </motion.div>
     </motion.div>

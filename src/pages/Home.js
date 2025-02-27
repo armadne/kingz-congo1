@@ -5,6 +5,7 @@ import Card from "../components/Card";
 //import background from "./background_home4.jpg";
 import backgroundImage from "./IMG_9706R.jpg";
 
+import PopupEvent from "../components/PopupEvent";
 
 
 
@@ -16,6 +17,10 @@ function Home() {
        <div className="home" style={{backgroundImage: `url(${backgroundImage})`}}>
 
         <h1>Bienvenue sur Kingz of Kongo</h1>
+
+        < PopupEvent/>
+
+
             <p> Notre mission est de promouvour la culture et soutenir nos actions humanitaires.</p>
 
             <div class="background-card-container">
