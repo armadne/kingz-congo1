@@ -4,14 +4,13 @@
 // Importations libraries necessaires
 require("dotenv").config();
 
+
 console.log("Email User:", process.env.EMAIL_USER);
 console.log("Email Password", process.env.EMAIL_PASS);
 
 const express = require("express"); //dotenv : permet d’utiliser un fichier .env pour stocker les informations sensibles comme l’adresse e-mail et le mot de passe.
 const cors = require("cors") // Permet autoriser requetes entre frontend React et backend Express
 const nodemailer = require("nodemailer") // Bibliothèque epour envoyer des mails
-const mongoose = require("mongoose"); // Bibliotheque pour interagir avec MongoDB
-const Contenu= require("./models/Contenu"); // Importation du modèle MongoDB depuis le dossier models et importe le fichier Contenu.js
 
 
 // Initialise l'application  Express
@@ -28,12 +27,6 @@ app.use(cors());
 //Définit le port du serveur (5000 par défaut, ou un autre mais doit etre definie dans .env )
 const PORT = process.env.PORT || 5000;
 
-// Connexion à MongoDB
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(() => console.log("Connecté à MongoDB"))
-  .catch((err) => console.error("Erreur MongoDB:", err));
 
 
 
@@ -125,48 +118,10 @@ app.post("/send-donation-email", async (req, res) => {
 });
 
 
-// Route pour récupérer le contenu
-// Cette route permet à React de récuperer les données stockées en base
-app.get("/api/contenu", async (req, res) => {
-    try{
-        const contenu = await Contenu.findOne(); // Cherche un document de contenu dans la base de donnée
-        res.json(contenu); // Renvoie le contenu en réponse JSON
-} catch(error) {
-    res.status(500).json({ error: "Erreur serveur"}); // Réponse en cas d'erreur serveur
-}
 
-});
-
-// Route pour modifier le contenu
-// Cette route permet de mettrre a jour le titre, descriotion et les images de la base de donnée
-app.put("/api/contenu/:id", async (req, res) => {
-    const { titre, description, images } = req.body; //Recuperration des nouvelles données envoyées par le client
-
-    try{
-        // Met à jour le contenu en base de données avec les nouvelles valeurs et renvoie le contenu mis à jour
-        const contenu = await Contenu.findByIdAndUpdate(req.params.id, { titre, description, images}, { new: true });
-        res.json(contenu);
-    } catch (error) {
-        res.status(500).json({ error: "Erreur serveur"});
-    }
-});
-
-app.post("/api/upload", upload.single("image"), async (req, res) => {
-    try {
-        const result = await cloudinary.uploader.upload(req.file.path); // Upload sur Cloudinary
-        res.json( {url: result.secur_url }); // Retourne l'URL de l'image uploadée
-    } catch(error) {
-        res.status(500).json({ error: "Erreur d'upload"});
-    }
-});
 
 // Démarrage du serveur
 app.listen(PORT, () => {
     console.log(`Serveur en écoute sur http://localhost:${PORT}`);
 })
 
-
-
-app.listen(PORT, () => {
-    console.log(`Serveur en écoute sur http://localhost:${PORT}`);
-});
