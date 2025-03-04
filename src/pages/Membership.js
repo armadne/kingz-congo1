@@ -169,7 +169,7 @@ const MembershipForm = () => {
         <div id="google-pay-button-container"></div>
 
         <button className="devenez-membre-btn">
-          <a href="https://www.paypal.com/ncp/payment/LHFDGH2CX8S2S">Payer la cotisation</a>
+          <a href="https://www.paypal.com/ncp/payment/T7D6FEGPB3D6S">Payer la cotisation</a>
         </button>
       </motion.div>
     </motion.div>
